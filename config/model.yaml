@@ -1,0 +1,49 @@
+model_selection:
+    model:
+      LogisticRegression:
+        search_param_grid:
+          C:
+            - 500
+            - 1000
+          max_iter:
+            - 100
+            - 113
+          multi_class:
+            - 'auto'
+          penalty:
+            - 'l2'
+          solver:
+            - 'lbfgs'
+            - 'liblinear'
+            - 'sag'
+            - 'saga'
+
+      DecisionTreeClassifier:
+        search_param_grid:
+           criterion:
+            - 'gini'
+            - 'entropy'
+           max_features:
+            - 'auto'
+            - 'sqrt'
+            - 'log2'
+
+      RandomForestClassifier:
+        search_param_grid:
+          n_estimators:
+            - 100
+            - 200
+            - 300
+          max_depth: 
+            - None
+            - 10
+            - 20 
+            - 30
+          min_samples_split:
+            - 2
+            - 5
+            - 10
+          min_samples_leaf:
+            - 1
+            - 2
+            - 4
